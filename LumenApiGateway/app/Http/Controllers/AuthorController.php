@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 use App\Services\AuthorService;
+use Illuminate\Http\Response;
 
 class AuthorController extends Controller
 {
@@ -25,12 +26,12 @@ class AuthorController extends Controller
 
     public function index()
     {
-
+        return $this->successResponse($this->authorService->obtainAuthors());
     }
     public function store(Request $request)
     {
-
-    }
+        return $this->successResponse($this->authorService->createAuthors($request->all()), Response::HTTP_CREATED);
+    }   
     public function show($author)
     {
 
