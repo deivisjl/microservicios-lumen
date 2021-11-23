@@ -28,4 +28,9 @@ class AuthorService
     {
         return $this->performRequest('GET',"/authors/{$author}");
     }
+
+    public function editAuthor($data, $author)
+    {
+        return $this->performRequest('PUT',"/authors/{$author}", $data);
+    }
 }
