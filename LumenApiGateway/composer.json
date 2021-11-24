@@ -13,6 +13,7 @@
         "dusterio/lumen-passport": "0.2.8",
         "guzzlehttp/guzzle": "6.3",
         "laravel/lumen-framework": "5.7.*",
+        "laravel/passport": "7.3.1",
         "vlucas/phpdotenv": "~2.2"
     },
     "require-dev": {
