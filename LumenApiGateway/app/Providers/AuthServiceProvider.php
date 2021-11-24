@@ -26,6 +26,11 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (config('app.debug')) {
+            error_reporting(E_ALL & ~E_USER_DEPRECATED);
+        } else {
+            error_reporting(0);
+        }
         // Here you may define how you wish users to be authenticated for your Lumen
         // application. The callback which receives the incoming request instance
         // should return either a User instance or null. You're free to obtain
